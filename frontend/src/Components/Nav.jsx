@@ -153,8 +153,8 @@ const Nav = () => {
                       <ul className="space-y-4">
                         {isLoggedIn ? (
                           <li>
-                            <div className="font-medium tracking-wide cursor-pointer text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
-                              Welcome, {user?.name}
+                            <div className="font-medium tracking-wide cursor-pointer text-black transition-colors duration-200 hover:text-teal-accent-400">
+                            Welcome, <span className="text-red-600 uppercase">{user?.name}</span> 
                             </div>
                           </li>
                         ) : (
