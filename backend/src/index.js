@@ -11,8 +11,8 @@ dotenv.config();
 
 // Determine the CORS origin based on the environment
 const allowedOrigins = process.env.NODE_ENV === "development"
-  ? ["http://localhost:5000"] // Local development URL
-  : ["https://easyshopping-qtwf.onrender.com/"]; // Production URL
+  ? ["http://localhost:5173"] // Local development URL
+  : ["https://easyshopping-qtwf.onrender.com"]; // Production URL
 
 app.use(
   cors({
