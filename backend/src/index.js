@@ -7,15 +7,28 @@ import cors from "cors";
 import productRouter from "./Routes/Product.Router.js";
 import cookieParser from "cookie-parser";
 
+dotenv.config();
+
+// Determine the CORS origin based on the environment
+const allowedOrigins = process.env.NODE_ENV === "development"
+  ? ["http://localhost:5000"] // Local development URL
+  : ["https://riwp-frontend.onrender.com"]; // Production URL
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your React app's URL
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true, // Allow cookies
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
-dotenv.config();
 
 connectDatabase();
 
