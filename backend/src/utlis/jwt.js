@@ -11,7 +11,7 @@ const generateToken = (userId, res) => {
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
     httpOnly: true, // Prevent XSS attacks
     sameSite: "strict", // Prevent CSRF attacks
-    secure:  false, // Send cookie only over HTTPS in production
+    secure:  process.env.NODE_ENV === "production",  // Send cookie only over HTTPS in production
   });
 
   console.log("Cookie set successfully");
