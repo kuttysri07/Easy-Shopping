@@ -224,7 +224,7 @@ const Nav = () => {
                   href="/cart"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Cart
                 </a>
@@ -235,7 +235,7 @@ const Nav = () => {
                             <a
                               aria-label="Sign up"
                               title="Sign up"
-                              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                              className="font-medium tracking-wide text-red-700 transition-colors duration-200 hover:text-teal-accent-400"
                               onClick={() => dispatch(userLogout())}
                             >
                               Logout
